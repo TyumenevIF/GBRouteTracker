@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0hl-tz-Bld">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,44 +13,89 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GBRouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liT-cj-3WK" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piJ-1P-iGi">
+                                        <rect key="frame" x="8" y="0.0" width="137" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Начать новый трек">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivc-rK-O6B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJo-Ws-oOH">
+                                        <rect key="frame" x="8" y="0.0" width="111" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Закончить трек">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="finishTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8g-Zz-25B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWo-SJ-E61">
+                                        <rect key="frame" x="203" y="0.0" width="164" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Предыдущий маршрут"/>
+                                        <connections>
+                                            <action selector="showPreviousTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqU-FJ-HUp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XWo-SJ-E61" secondAttribute="trailing" constant="8" id="0lF-4a-eVi"/>
+                                    <constraint firstItem="piJ-1P-iGi" firstAttribute="top" secondItem="liT-cj-3WK" secondAttribute="top" id="JUZ-j6-LH8"/>
+                                    <constraint firstItem="wJo-Ws-oOH" firstAttribute="top" secondItem="piJ-1P-iGi" secondAttribute="top" id="RpM-Np-wFH"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="piJ-1P-iGi" secondAttribute="trailing" constant="20" symbolic="YES" id="SC3-hn-TbO"/>
+                                    <constraint firstItem="piJ-1P-iGi" firstAttribute="leading" secondItem="liT-cj-3WK" secondAttribute="leading" constant="8" id="eDo-LN-L6W"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wJo-Ws-oOH" secondAttribute="trailing" constant="8" id="kYg-Df-abo"/>
+                                    <constraint firstItem="wJo-Ws-oOH" firstAttribute="leading" secondItem="liT-cj-3WK" secondAttribute="leading" constant="8" id="tCz-MJ-IlS"/>
+                                    <constraint firstItem="XWo-SJ-E61" firstAttribute="top" secondItem="liT-cj-3WK" secondAttribute="top" id="vjC-6Y-HLV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="liT-cj-3WK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Bb-ry-eXr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="liT-cj-3WK" secondAttribute="bottom" id="9v9-MN-H3e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="liT-cj-3WK" secondAttribute="trailing" id="IO1-gO-1hK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="liT-cj-3WK" secondAttribute="bottom" id="dRg-Rd-hen"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="liT-cj-3WK" secondAttribute="bottom" id="ryr-bz-flm"/>
                             <constraint firstItem="liT-cj-3WK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yHi-WV-ABo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="ljK-s9-8EV">
-                        <barButtonItem key="leftBarButtonItem" title="Отслеживать" id="PiH-Lg-PBi">
+                        <barButtonItem key="leftBarButtonItem" title="Отслеживать" id="Cu9-7m-sva">
                             <connections>
-                                <action selector="trackLocation:" destination="BYZ-38-t0r" id="PPv-Ek-BhN"/>
+                                <action selector="trackLocation:" destination="BYZ-38-t0r" id="eU7-YG-PL6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="finishTrackButton" destination="wJo-Ws-oOH" id="kvi-Xd-qez"/>
                         <outlet property="mapView" destination="liT-cj-3WK" id="6Yf-02-Wgi"/>
+                        <outlet property="previousTrackButton" destination="XWo-SJ-E61" id="0Hq-Nc-eKW"/>
+                        <outlet property="startTrackButton" destination="piJ-1P-iGi" id="QxP-2y-if5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="78"/>
+            <point key="canvasLocation" x="1611.5942028985507" y="77.678571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ug4-WK-J2O">
             <objects>
                 <navigationController id="0hl-tz-Bld" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGw-MK-yC1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -65,6 +110,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
