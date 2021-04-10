@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2804585C2618B7040049203B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585B2618B7040049203B /* AppDelegate.swift */; };
 		2804585E2618B7040049203B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585D2618B7040049203B /* SceneDelegate.swift */; };
-		280458602618B7040049203B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585F2618B7040049203B /* ViewController.swift */; };
+		280458602618B7040049203B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585F2618B7040049203B /* MapViewController.swift */; };
 		280458632618B7040049203B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458612618B7040049203B /* Main.storyboard */; };
 		280458652618B70B0049203B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280458642618B70B0049203B /* Assets.xcassets */; };
 		280458682618B70B0049203B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458662618B70B0049203B /* LaunchScreen.storyboard */; };
+		5A81974C3B19CDAEFF5EC8E0 /* Pods_GBRouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02560BDF322BA4A9A55ED610 /* Pods-GBRouteTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.release.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.release.xcconfig"; sourceTree = "<group>"; };
 		280458582618B7040049203B /* GBRouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBRouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2804585B2618B7040049203B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2804585D2618B7040049203B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2804585F2618B7040049203B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2804585F2618B7040049203B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		280458622618B7040049203B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280458642618B70B0049203B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280458672618B70B0049203B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280458692618B70B0049203B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBRouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A81974C3B19CDAEFF5EC8E0 /* Pods_GBRouteTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2804585A2618B7040049203B /* GBRouteTracker */,
 				280458592618B7040049203B /* Products */,
+				7C326BF17B2C9469280D6BAA /* Pods */,
+				7961696BA7839DF05F083DBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +65,30 @@
 			children = (
 				2804585B2618B7040049203B /* AppDelegate.swift */,
 				2804585D2618B7040049203B /* SceneDelegate.swift */,
-				2804585F2618B7040049203B /* ViewController.swift */,
+				2804585F2618B7040049203B /* MapViewController.swift */,
 				280458612618B7040049203B /* Main.storyboard */,
 				280458642618B70B0049203B /* Assets.xcassets */,
 				280458662618B70B0049203B /* LaunchScreen.storyboard */,
 				280458692618B70B0049203B /* Info.plist */,
 			);
 			path = GBRouteTracker;
+			sourceTree = "<group>";
+		};
+		7961696BA7839DF05F083DBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C326BF17B2C9469280D6BAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */,
+				02560BDF322BA4A9A55ED610 /* Pods-GBRouteTracker.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2804586C2618B70C0049203B /* Build configuration list for PBXNativeTarget "GBRouteTracker" */;
 			buildPhases = (
+				B32CCACC2014735F7475E54C /* [CP] Check Pods Manifest.lock */,
 				280458542618B7040049203B /* Sources */,
 				280458552618B7040049203B /* Frameworks */,
 				280458562618B7040049203B /* Resources */,
+				683E8F14605A7C3E91F63FC9 /* [CP] Copy Pods Resources */,
+				280458742618CD9A0049203B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,12 +159,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		280458742618CD9A0049203B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		683E8F14605A7C3E91F63FC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B32CCACC2014735F7475E54C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBRouteTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		280458542618B7040049203B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280458602618B7040049203B /* ViewController.swift in Sources */,
+				280458602618B7040049203B /* MapViewController.swift in Sources */,
 				2804585C2618B7040049203B /* AppDelegate.swift in Sources */,
 				2804585E2618B7040049203B /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +369,7 @@
 		};
 		2804586D2618B70C0049203B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +389,7 @@
 		};
 		2804586E2618B70C0049203B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02560BDF322BA4A9A55ED610 /* Pods-GBRouteTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
