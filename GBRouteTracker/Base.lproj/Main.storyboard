@@ -78,6 +78,11 @@
                                 <action selector="trackLocation:" destination="BYZ-38-t0r" id="eU7-YG-PL6"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Не отслеживать" id="XnL-nV-v2X">
+                            <connections>
+                                <action selector="stopTrackLocation:" destination="BYZ-38-t0r" id="cl2-sc-YFe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="finishTrackButton" destination="wJo-Ws-oOH" id="kvi-Xd-qez"/>
