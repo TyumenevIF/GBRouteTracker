@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     var firstCoordinate = CLLocationCoordinate2D(latitude: 55.7522200, longitude: 37.6155600)
     var locationManager: CLLocationManager = CLLocationManager()
     var marker: GMSMarker?
-    var route: GMSPolyline?
+    var routeLine: GMSPolyline?
     var routePath: GMSMutablePath?
     lazy var realm = try! Realm()
     
@@ -51,29 +51,38 @@ class MapViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func trackLocation(_ sender: Any) {
-        startTrackButton.isHidden = true
-        finishTrackButton.isHidden = false
+        startTrackButton.isHidden = false
+        finishTrackButton.isHidden = true
         
-        route?.map = nil
-        route = GMSPolyline()
+        routeLine?.map = nil
+        routeLine = GMSPolyline()
         routePath = GMSMutablePath()
-        route?.map = mapView
+        routeLine?.map = mapView
         
-        deleteAllFromRealm()
         locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+    }
+    
+    @IBAction func stopTrackLocation(_ sender: Any) {
+        routeLine?.map = nil
+        routeLine = GMSPolyline()
+        
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
     
     @IBAction func startTrack(_ sender: Any) {
         startTrackButton.isHidden = true
-        finishTrackButton.isHidden = false
+        finishTrackButton.isHidden = false        
 
-        route?.map = nil
-        route = GMSPolyline()
+        routeLine?.map = nil
+        routeLine = GMSPolyline()
         routePath = GMSMutablePath()
-        route?.map = mapView
+        routeLine?.map = mapView
         
         deleteAllFromRealm()
         locationManager.startUpdatingLocation()
+        locationManager.delegate = self
     }
     
     @IBAction func finishTrack(_ sender: Any) {
@@ -81,15 +90,30 @@ class MapViewController: UIViewController {
         finishTrackButton.isHidden = true
         
         locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
     }
     
     @IBAction func showPreviousTrack(_ sender: Any) {
+        if startTrackButton.isHidden == true {
+            showAlert()
+        }
+        
         startTrackButton.isHidden = false
         finishTrackButton.isHidden = true
-
-        locationManager.stopUpdatingLocation()
         
-        route?.map = mapView
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
+        
+        routeLine = GMSPolyline()
+        routePath = GMSMutablePath()
+        let realmRoutePoint = realm.objects(RoutePoint.self)
+        for point in realmRoutePoint {
+            let coord = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            routePath?.add(coord)
+        }
+        routeLine?.path = routePath
+        routeLine?.map = mapView
+        
         let bounds = GMSCoordinateBounds(path: routePath ?? GMSMutablePath())
         mapView.animate(with: GMSCameraUpdate.fit(bounds))
     }
@@ -106,11 +130,27 @@ class MapViewController: UIViewController {
             print(error)
         }
     }
-    
+        
     func deleteAllFromRealm() {
-        try! realm.write {
-            realm.deleteAll()
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print(error)
         }
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(
+            title: "Уведомление",
+            message: "Слежение будет остановлено",
+            preferredStyle: .alert
+        )
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -119,8 +159,11 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         routePath?.add(location.coordinate)
-        route?.path = routePath
-        saveToRealm(location)
+        routeLine?.path = routePath
+        
+        if startTrackButton.isHidden == true {
+            saveToRealm(location)
+        }
 
         let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
         mapView.animate(to: camera)
