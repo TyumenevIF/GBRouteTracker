@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0hl-tz-Bld">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,13 +11,13 @@
         <!--Карта-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GBRouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="GBRouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liT-cj-3WK" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piJ-1P-iGi">
                                         <rect key="frame" x="8" y="0.0" width="137" height="30"/>
@@ -55,6 +55,7 @@
                                     <constraint firstItem="wJo-Ws-oOH" firstAttribute="top" secondItem="piJ-1P-iGi" secondAttribute="top" id="RpM-Np-wFH"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="piJ-1P-iGi" secondAttribute="trailing" constant="20" symbolic="YES" id="SC3-hn-TbO"/>
                                     <constraint firstItem="piJ-1P-iGi" firstAttribute="leading" secondItem="liT-cj-3WK" secondAttribute="leading" constant="8" id="eDo-LN-L6W"/>
+                                    <constraint firstItem="XWo-SJ-E61" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="piJ-1P-iGi" secondAttribute="trailing" constant="8" symbolic="YES" id="fVf-JF-kzb"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wJo-Ws-oOH" secondAttribute="trailing" constant="8" id="kYg-Df-abo"/>
                                     <constraint firstItem="wJo-Ws-oOH" firstAttribute="leading" secondItem="liT-cj-3WK" secondAttribute="leading" constant="8" id="tCz-MJ-IlS"/>
                                     <constraint firstItem="XWo-SJ-E61" firstAttribute="top" secondItem="liT-cj-3WK" secondAttribute="top" id="vjC-6Y-HLV"/>
@@ -73,14 +74,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="ljK-s9-8EV">
-                        <barButtonItem key="leftBarButtonItem" title="Отслеживать" id="Cu9-7m-sva">
+                        <barButtonItem key="rightBarButtonItem" title="Отслеживать" id="XnL-nV-v2X">
                             <connections>
-                                <action selector="trackLocation:" destination="BYZ-38-t0r" id="eU7-YG-PL6"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Не отслеживать" id="XnL-nV-v2X">
-                            <connections>
-                                <action selector="stopTrackLocation:" destination="BYZ-38-t0r" id="cl2-sc-YFe"/>
+                                <action selector="trackLocation:" destination="BYZ-38-t0r" id="Lgp-dM-dRc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,23 +89,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611.5942028985507" y="77.678571428571431"/>
+            <point key="canvasLocation" x="1415" y="77"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ug4-WK-J2O">
+        <!--Main View Controller-->
+        <scene sceneID="siV-Le-eVN">
             <objects>
-                <navigationController id="0hl-tz-Bld" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WGw-MK-yC1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                <viewController storyboardIdentifier="MainViewController" id="ZSy-Mf-UQl" customClass="MainViewController" customModule="GBRouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mkI-uT-ZSk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-Xf-dPZ">
+                                <rect key="frame" x="132" y="316.5" width="111" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="JeT-ze-hNG"/>
+                                </constraints>
+                                <state key="normal" title="Показать карту"/>
+                                <connections>
+                                    <action selector="showMap:" destination="ZSy-Mf-UQl" eventType="touchUpInside" id="dIu-lj-pRj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkQ-Zk-V7m">
+                                <rect key="frame" x="164.5" y="380.5" width="46" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="40X-au-tFN"/>
+                                </constraints>
+                                <state key="normal" title="Выйти"/>
+                                <connections>
+                                    <action selector="logout:" destination="ZSy-Mf-UQl" eventType="touchUpInside" id="JiM-BJ-lj5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9iu-ir-l5d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C9O-Xf-dPZ" firstAttribute="centerX" secondItem="mkI-uT-ZSk" secondAttribute="centerX" id="3pq-Lx-zkS"/>
+                            <constraint firstItem="wkQ-Zk-V7m" firstAttribute="centerX" secondItem="mkI-uT-ZSk" secondAttribute="centerX" id="JNW-Cn-yam"/>
+                            <constraint firstItem="C9O-Xf-dPZ" firstAttribute="centerY" secondItem="mkI-uT-ZSk" secondAttribute="centerY" id="JRh-9p-WHk"/>
+                            <constraint firstItem="wkQ-Zk-V7m" firstAttribute="top" secondItem="C9O-Xf-dPZ" secondAttribute="bottom" constant="30" id="lHQ-07-cmc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tw4-br-Sbt"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pnH-F5-vtB"/>
+                        <outlet property="router" destination="7rY-xc-dmu" id="96U-cr-SpZ"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pp5-D0-2x2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WL6-ZW-4He" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="7rY-xc-dmu" customClass="MainRouter" customModule="GBRouteTracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="ZSy-Mf-UQl" id="yF4-dz-SHN"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="807" y="78"/>
+            <point key="canvasLocation" x="617" y="77"/>
         </scene>
     </scenes>
     <resources>
