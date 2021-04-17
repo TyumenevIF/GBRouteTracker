@@ -13,14 +13,13 @@ import RealmSwift
 class MapViewController: UIViewController {
     
     var firstCoordinate = CLLocationCoordinate2D(latitude: 55.7522200, longitude: 37.6155600)
-    var locationManager: CLLocationManager = CLLocationManager()
-    var marker: GMSMarker?
+    var locationManager: CLLocationManager?
     var routeLine: GMSPolyline?
     var routePath: GMSMutablePath?
     lazy var realm = try! Realm()
     
     // MARK: - Outlets
-    @IBOutlet weak var mapView: GMSMapView!    
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var startTrackButton: UIButton!
     @IBOutlet weak var finishTrackButton: UIButton!
     @IBOutlet weak var previousTrackButton: UIButton!
@@ -42,11 +41,13 @@ class MapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        locationManager.delegate = self
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.requestAlwaysAuthorization()
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.requestAlwaysAuthorization()
     }
     
     // MARK: - Actions
@@ -59,21 +60,13 @@ class MapViewController: UIViewController {
         routePath = GMSMutablePath()
         routeLine?.map = mapView
         
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-    }
-    
-    @IBAction func stopTrackLocation(_ sender: Any) {
-        routeLine?.map = nil
-        routeLine = GMSPolyline()
-        
-        locationManager.stopUpdatingLocation()
-        locationManager.delegate = nil
+        locationManager?.startUpdatingLocation()
+        locationManager?.delegate = self
     }
     
     @IBAction func startTrack(_ sender: Any) {
         startTrackButton.isHidden = true
-        finishTrackButton.isHidden = false        
+        finishTrackButton.isHidden = false
 
         routeLine?.map = nil
         routeLine = GMSPolyline()
@@ -81,16 +74,16 @@ class MapViewController: UIViewController {
         routeLine?.map = mapView
         
         deleteAllFromRealm()
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
+        locationManager?.startUpdatingLocation()
+        locationManager?.delegate = self
     }
     
     @IBAction func finishTrack(_ sender: Any) {
         startTrackButton.isHidden = false
         finishTrackButton.isHidden = true
         
-        locationManager.stopUpdatingLocation()
-        locationManager.delegate = nil
+        locationManager?.stopUpdatingLocation()
+        locationManager?.delegate = nil
     }
     
     @IBAction func showPreviousTrack(_ sender: Any) {
@@ -101,8 +94,8 @@ class MapViewController: UIViewController {
         startTrackButton.isHidden = false
         finishTrackButton.isHidden = true
         
-        locationManager.stopUpdatingLocation()
-        locationManager.delegate = nil
+        locationManager?.stopUpdatingLocation()
+        locationManager?.delegate = nil
         
         routeLine = GMSPolyline()
         routePath = GMSMutablePath()
@@ -118,7 +111,7 @@ class MapViewController: UIViewController {
         mapView.animate(with: GMSCameraUpdate.fit(bounds))
     }
     
-    func saveToRealm(_ location: CLLocation) {
+    private func saveToRealm(_ location: CLLocation) {
         do {
             let realm = try Realm()
             let routePoint = RoutePoint(location: location)
@@ -131,7 +124,7 @@ class MapViewController: UIViewController {
         }
     }
         
-    func deleteAllFromRealm() {
+    private func deleteAllFromRealm() {
         do {
             try realm.write {
                 realm.deleteAll()
@@ -141,7 +134,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func showAlert() {
+    private func showAlert() {
         let alert = UIAlertController(
             title: "Уведомление",
             message: "Слежение будет остановлено",

@@ -10,9 +10,16 @@
 		2804585C2618B7040049203B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585B2618B7040049203B /* AppDelegate.swift */; };
 		2804585E2618B7040049203B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585D2618B7040049203B /* SceneDelegate.swift */; };
 		280458602618B7040049203B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585F2618B7040049203B /* MapViewController.swift */; };
-		280458632618B7040049203B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458612618B7040049203B /* Main.storyboard */; };
 		280458652618B70B0049203B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280458642618B70B0049203B /* Assets.xcassets */; };
 		280458682618B70B0049203B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458662618B70B0049203B /* LaunchScreen.storyboard */; };
+		287444DB26259D8100DAAD69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DA26259D8100DAAD69 /* LoginViewController.swift */; };
+		287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DD2625A28C00DAAD69 /* SignUpViewController.swift */; };
+		287444E12625A37600DAAD69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444E02625A37600DAAD69 /* MainViewController.swift */; };
+		2874451D2627820800DAAD69 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874451C2627820800DAAD69 /* BaseRouter.swift */; };
+		287445202627823D00DAAD69 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874451F2627823D00DAAD69 /* Helper.swift */; };
+		287445242627828000DAAD69 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287445232627828000DAAD69 /* Auth.storyboard */; };
+		28744528262782AA00DAAD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28744527262782AA00DAAD69 /* Main.storyboard */; };
+		2874452C262783F800DAAD69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874452B262783F800DAAD69 /* User.swift */; };
 		28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB0A532620467A004F0449 /* RoutePoint.swift */; };
 		28EB0A5A262066DD004F0449 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28EB0A59262066DD004F0449 /* RealmSwift */; };
 		5A81974C3B19CDAEFF5EC8E0 /* Pods_GBRouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */; };
@@ -24,10 +31,17 @@
 		2804585B2618B7040049203B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2804585D2618B7040049203B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2804585F2618B7040049203B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		280458622618B7040049203B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280458642618B70B0049203B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280458672618B70B0049203B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280458692618B70B0049203B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		287444DA26259D8100DAAD69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		287444DD2625A28C00DAAD69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		287444E02625A37600DAAD69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2874451C2627820800DAAD69 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		2874451F2627823D00DAAD69 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		287445232627828000DAAD69 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		28744527262782AA00DAAD69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2874452B262783F800DAAD69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28EB0A532620467A004F0449 /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
 		78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBRouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,16 +81,55 @@
 		2804585A2618B7040049203B /* GBRouteTracker */ = {
 			isa = PBXGroup;
 			children = (
+				287444D126259BBF00DAAD69 /* Flows */,
 				2804585B2618B7040049203B /* AppDelegate.swift */,
 				2804585D2618B7040049203B /* SceneDelegate.swift */,
-				2804585F2618B7040049203B /* MapViewController.swift */,
-				28EB0A532620467A004F0449 /* RoutePoint.swift */,
-				280458612618B7040049203B /* Main.storyboard */,
 				280458642618B70B0049203B /* Assets.xcassets */,
 				280458662618B70B0049203B /* LaunchScreen.storyboard */,
 				280458692618B70B0049203B /* Info.plist */,
 			);
 			path = GBRouteTracker;
+			sourceTree = "<group>";
+		};
+		287444D126259BBF00DAAD69 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				287444D326259BD400DAAD69 /* Auth */,
+				287444D426259BE200DAAD69 /* Main */,
+				2874452A262783D700DAAD69 /* Realm */,
+				2874451C2627820800DAAD69 /* BaseRouter.swift */,
+				2874451F2627823D00DAAD69 /* Helper.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		287444D326259BD400DAAD69 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				287445232627828000DAAD69 /* Auth.storyboard */,
+				287444DA26259D8100DAAD69 /* LoginViewController.swift */,
+				287444DD2625A28C00DAAD69 /* SignUpViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		287444D426259BE200DAAD69 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				28744527262782AA00DAAD69 /* Main.storyboard */,
+				287444E02625A37600DAAD69 /* MainViewController.swift */,
+				2804585F2618B7040049203B /* MapViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2874452A262783D700DAAD69 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				28EB0A532620467A004F0449 /* RoutePoint.swift */,
+				2874452B262783F800DAAD69 /* User.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		7961696BA7839DF05F083DBC /* Frameworks */ = {
@@ -162,9 +215,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287445242627828000DAAD69 /* Auth.storyboard in Resources */,
 				280458682618B70B0049203B /* LaunchScreen.storyboard in Resources */,
 				280458652618B70B0049203B /* Assets.xcassets in Resources */,
-				280458632618B7040049203B /* Main.storyboard in Resources */,
+				28744528262782AA00DAAD69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,24 +288,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287444E12625A37600DAAD69 /* MainViewController.swift in Sources */,
 				280458602618B7040049203B /* MapViewController.swift in Sources */,
 				28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */,
 				2804585C2618B7040049203B /* AppDelegate.swift in Sources */,
+				287444DB26259D8100DAAD69 /* LoginViewController.swift in Sources */,
+				287445202627823D00DAAD69 /* Helper.swift in Sources */,
+				287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */,
 				2804585E2618B7040049203B /* SceneDelegate.swift in Sources */,
+				2874452C262783F800DAAD69 /* User.swift in Sources */,
+				2874451D2627820800DAAD69 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		280458612618B7040049203B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				280458622618B7040049203B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		280458662618B70B0049203B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
