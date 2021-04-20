@@ -11,10 +11,40 @@ import RealmSwift
 final class SignUpViewController: UIViewController {
     
     lazy var realm = try! Realm()
+    let curtainVC = CurtainViewController()
     
     // MARK: - Outlets
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
+    
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil
+        )
+        notificationCenter.addObserver(
+            self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil
+        )
+    }
+    
+    @objc func appMovedToForeground() {
+        curtainVC.heightConstraint.isActive = false
+        curtainVC.view.removeFromSuperview()
+    }
+    
+    @objc func appMovedToBackground() {
+        curtainVC.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(curtainVC.view)
+        
+        NSLayoutConstraint.activate([
+            curtainVC.view.topAnchor.constraint(equalTo: self.view.topAnchor),
+            curtainVC.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            curtainVC.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            curtainVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+    }
     
     // MARK: - Actions
     @IBAction func signUp(_ sender: Any) {        

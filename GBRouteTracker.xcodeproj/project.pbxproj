@@ -12,6 +12,9 @@
 		280458602618B7040049203B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2804585F2618B7040049203B /* MapViewController.swift */; };
 		280458652618B70B0049203B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280458642618B70B0049203B /* Assets.xcassets */; };
 		280458682618B70B0049203B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458662618B70B0049203B /* LaunchScreen.storyboard */; };
+		282E16B2262C4FDA004DEA3B /* CurtainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */; };
+		282FE13D262C89F000343F8C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FE13C262C89F000343F8C /* ContainerViewController.swift */; };
+		282FE141262C8B0200343F8C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FE140262C8B0200343F8C /* UIViewController+Extension.swift */; };
 		287444DB26259D8100DAAD69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DA26259D8100DAAD69 /* LoginViewController.swift */; };
 		287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DD2625A28C00DAAD69 /* SignUpViewController.swift */; };
 		287444E12625A37600DAAD69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444E02625A37600DAAD69 /* MainViewController.swift */; };
@@ -34,6 +37,9 @@
 		280458642618B70B0049203B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280458672618B70B0049203B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280458692618B70B0049203B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainViewController.swift; sourceTree = "<group>"; };
+		282FE13C262C89F000343F8C /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		282FE140262C8B0200343F8C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		287444DA26259D8100DAAD69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287444DD2625A28C00DAAD69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		287444E02625A37600DAAD69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,9 +97,20 @@
 			path = GBRouteTracker;
 			sourceTree = "<group>";
 		};
+		282FE13B262C89A400343F8C /* Curtain */ = {
+			isa = PBXGroup;
+			children = (
+				282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */,
+				282FE13C262C89F000343F8C /* ContainerViewController.swift */,
+				282FE140262C8B0200343F8C /* UIViewController+Extension.swift */,
+			);
+			path = Curtain;
+			sourceTree = "<group>";
+		};
 		287444D126259BBF00DAAD69 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				282FE13B262C89A400343F8C /* Curtain */,
 				287444D326259BD400DAAD69 /* Auth */,
 				287444D426259BE200DAAD69 /* Main */,
 				2874452A262783D700DAAD69 /* Realm */,
@@ -289,14 +306,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				287444E12625A37600DAAD69 /* MainViewController.swift in Sources */,
+				282FE141262C8B0200343F8C /* UIViewController+Extension.swift in Sources */,
 				280458602618B7040049203B /* MapViewController.swift in Sources */,
 				28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */,
 				2804585C2618B7040049203B /* AppDelegate.swift in Sources */,
+				282E16B2262C4FDA004DEA3B /* CurtainViewController.swift in Sources */,
 				287444DB26259D8100DAAD69 /* LoginViewController.swift in Sources */,
 				287445202627823D00DAAD69 /* Helper.swift in Sources */,
 				287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */,
 				2804585E2618B7040049203B /* SceneDelegate.swift in Sources */,
 				2874452C262783F800DAAD69 /* User.swift in Sources */,
+				282FE13D262C89F000343F8C /* ContainerViewController.swift in Sources */,
 				2874451D2627820800DAAD69 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
