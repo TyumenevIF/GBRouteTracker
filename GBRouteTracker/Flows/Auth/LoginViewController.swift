@@ -7,6 +7,8 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 final class LoginViewController: UIViewController {
     
@@ -17,10 +19,13 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
     @IBOutlet weak var router: LoginRouter!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureLoginBindings()
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(
             self, selector: #selector(appMovedToForeground), name: UIApplication.didBecomeActiveNotification, object: nil
@@ -48,14 +53,13 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func login(_ sender: Any) {        
+    @IBAction func login(_ sender: Any) {
         guard
             let login = loginView.text,
             login.isEmpty == false,
             let password = passwordView.text,
             password.isEmpty == false
         else {
-            showEmptyLoginError()
             return
         }
         
@@ -78,14 +82,18 @@ final class LoginViewController: UIViewController {
         router.toSignUp()
     }
     
-    private func showEmptyLoginError() {
-        let alert = UIAlertController(
-            title: "Ошибка", message: "Введите логин и пароль", preferredStyle: .alert
-        )
-        
-        let ok = UIAlertAction(title: "OK", style: .cancel)
-        alert.addAction(ok)
-        present(alert, animated: true)
+    func configureLoginBindings() {
+        Observable
+            .combineLatest(
+                loginView.rx.text,
+                passwordView.rx.text
+            )
+            .map { login, password in
+                return !(login ?? "").isEmpty && !(password ?? "").isEmpty
+            }
+            .bind { [weak loginButton] inputFilled in
+                loginButton?.isEnabled = inputFilled
+            }
     }
     
     private func showLoginError() {

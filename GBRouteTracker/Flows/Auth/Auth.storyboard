@@ -70,6 +70,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nTg-h4-LNM"/>
                     <connections>
+                        <outlet property="loginButton" destination="dTM-2A-GVk" id="FHl-Wu-iT5"/>
                         <outlet property="loginView" destination="oxG-85-Wjq" id="Zbq-dS-cjv"/>
                         <outlet property="passwordView" destination="1dr-A5-Pbg" id="aWn-5Z-NjR"/>
                         <outlet property="router" destination="dGx-pr-HAO" id="uvF-cW-eIJ"/>

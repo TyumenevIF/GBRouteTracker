@@ -23,9 +23,10 @@
 		287445242627828000DAAD69 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287445232627828000DAAD69 /* Auth.storyboard */; };
 		28744528262782AA00DAAD69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28744527262782AA00DAAD69 /* Main.storyboard */; };
 		2874452C262783F800DAAD69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2874452B262783F800DAAD69 /* User.swift */; };
+		28883DBD262F4B6700079B24 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28883DBC262F4B6700079B24 /* LocationManager.swift */; };
 		28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB0A532620467A004F0449 /* RoutePoint.swift */; };
 		28EB0A5A262066DD004F0449 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28EB0A59262066DD004F0449 /* RealmSwift */; };
-		5A81974C3B19CDAEFF5EC8E0 /* Pods_GBRouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */; };
+		F7E41BB7D6846AD3F71FC2BF /* libPods-GBRouteTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,9 @@
 		287445232627828000DAAD69 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		28744527262782AA00DAAD69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2874452B262783F800DAAD69 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		28883DBC262F4B6700079B24 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		28EB0A532620467A004F0449 /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
-		78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBRouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GBRouteTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EB0A5A262066DD004F0449 /* RealmSwift in Frameworks */,
-				5A81974C3B19CDAEFF5EC8E0 /* Pods_GBRouteTracker.framework in Frameworks */,
+				F7E41BB7D6846AD3F71FC2BF /* libPods-GBRouteTracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,7 @@
 				2874452A262783D700DAAD69 /* Realm */,
 				2874451C2627820800DAAD69 /* BaseRouter.swift */,
 				2874451F2627823D00DAAD69 /* Helper.swift */,
+				28883DBC262F4B6700079B24 /* LocationManager.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -152,7 +155,7 @@
 		7961696BA7839DF05F083DBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78841FA5772C43F8F3C65252 /* Pods_GBRouteTracker.framework */,
+				DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				287445202627823D00DAAD69 /* Helper.swift in Sources */,
 				287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */,
 				2804585E2618B7040049203B /* SceneDelegate.swift in Sources */,
+				28883DBD262F4B6700079B24 /* LocationManager.swift in Sources */,
 				2874452C262783F800DAAD69 /* User.swift in Sources */,
 				282FE13D262C89F000343F8C /* ContainerViewController.swift in Sources */,
 				2874451D2627820800DAAD69 /* BaseRouter.swift in Sources */,
