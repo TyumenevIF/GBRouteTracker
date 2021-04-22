@@ -74,6 +74,10 @@ final class SignUpViewController: UIViewController {
                     showSignUpError()
                 }
                 
+                if checkUser.isEmpty {
+                    showSignUpNewUser()
+                }
+                
                 try realm.write {
                     realm.add(newUser, update: .modified)
                 }
@@ -97,6 +101,17 @@ final class SignUpViewController: UIViewController {
         let alert = UIAlertController(
             title: "Ошибка",
             message: "Пользователь с таким логином уже зарегистрирован. Пароль будет изменен",
+            preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
+    
+    private func showSignUpNewUser() {
+        let alert = UIAlertController(
+            title: "Успешно!",
+            message: "Зарегистрирован новый пользователь",
             preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .cancel)
