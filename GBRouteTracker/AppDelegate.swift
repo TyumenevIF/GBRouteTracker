@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import RealmSwift
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey("AIzaSyD3ekp15-E3GzUSwDsL04fsQZJbBGO0u2Q")
         
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            guard granted else {
+                print("Разрешение не получено")
+                return
+            }
+            
+            self.sendNotificationRequest(content: self.makeNotificationContent(), trigger: self.makeIntervalNotificationTrigger())
+        }
+        
         let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
-        print("\nDirectory Realm:", getDocumentsDirectory())        
+        print("\nDirectory Realm:", getDocumentsDirectory())
         return true
     }
     
@@ -28,5 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             in: .userDomainMask
         )
         return paths[0]
+    }
+    
+    func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Уведомление"
+        content.subtitle = "Прошло более 30 минут..."
+        content.body = "с того момента, как свернули или закрыли приложение. Мы заждались :)"
+        return content
+    }
+    
+    func makeIntervalNotificationTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
+    }
+    
+    func sendNotificationRequest(content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        let request = UNNotificationRequest(identifier: "Alarm", content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
