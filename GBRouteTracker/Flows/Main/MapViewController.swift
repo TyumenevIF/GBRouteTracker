@@ -13,7 +13,7 @@ import RealmSwift
 class MapViewController: UIViewController {
     
     var firstCoordinate = CLLocationCoordinate2D(latitude: 55.7522200, longitude: 37.6155600)
-    var locationManager: CLLocationManager?
+    let locationManager = LocationManager.instance
     var routeLine: GMSPolyline?
     var routePath: GMSMutablePath?
     lazy var realm = try! Realm()
@@ -41,13 +41,21 @@ class MapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.requestAlwaysAuthorization()
+        locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location else { return }
+                self?.routePath?.add(location.coordinate)
+                self?.routeLine?.path = self?.routePath
+                
+                if self?.startTrackButton.isHidden == true {
+                    self?.saveToRealm(location)
+                }
+                
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+                self?.mapView.animate(to: position)
+            }
     }
     
     // MARK: - Actions
@@ -60,30 +68,27 @@ class MapViewController: UIViewController {
         routePath = GMSMutablePath()
         routeLine?.map = mapView
         
-        locationManager?.startUpdatingLocation()
-        locationManager?.delegate = self
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func startTrack(_ sender: Any) {
         startTrackButton.isHidden = true
         finishTrackButton.isHidden = false
-
+        
         routeLine?.map = nil
         routeLine = GMSPolyline()
         routePath = GMSMutablePath()
         routeLine?.map = mapView
         
-        deleteAllFromRealm()
-        locationManager?.startUpdatingLocation()
-        locationManager?.delegate = self
+        deletePointFromRealm()
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func finishTrack(_ sender: Any) {
         startTrackButton.isHidden = false
         finishTrackButton.isHidden = true
         
-        locationManager?.stopUpdatingLocation()
-        locationManager?.delegate = nil
+        locationManager.stopUpdatingLocation()
     }
     
     @IBAction func showPreviousTrack(_ sender: Any) {
@@ -94,8 +99,7 @@ class MapViewController: UIViewController {
         startTrackButton.isHidden = false
         finishTrackButton.isHidden = true
         
-        locationManager?.stopUpdatingLocation()
-        locationManager?.delegate = nil
+        locationManager.stopUpdatingLocation()
         
         routeLine = GMSPolyline()
         routePath = GMSMutablePath()
@@ -124,10 +128,11 @@ class MapViewController: UIViewController {
         }
     }
         
-    private func deleteAllFromRealm() {
+    private func deletePointFromRealm() {
         do {
+            let realmPoint = realm.objects(RoutePoint.self)
             try realm.write {
-                realm.deleteAll()
+                realm.delete(realmPoint)
             }
         } catch {
             print(error)
@@ -144,26 +149,5 @@ class MapViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-    }
-}
-
-// MARK: - Extensions
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        routePath?.add(location.coordinate)
-        routeLine?.path = routePath
-        
-        if startTrackButton.isHidden == true {
-            saveToRealm(location)
-        }
-
-        let camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
-        mapView.animate(to: camera)
-        print(location)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
 }
