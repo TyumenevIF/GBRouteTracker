@@ -36,7 +36,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc func appMovedToForeground() {
-        curtainVC.heightConstraint.isActive = false
+        curtainVC.heightConstraint?.isActive = false
         curtainVC.view.removeFromSuperview()
     }
     

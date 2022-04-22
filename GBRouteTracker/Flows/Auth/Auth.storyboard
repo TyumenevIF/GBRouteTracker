@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,9 +60,9 @@
                             <constraint firstItem="dTM-2A-GVk" firstAttribute="top" secondItem="1dr-A5-Pbg" secondAttribute="bottom" constant="30" id="93h-9w-LZE"/>
                             <constraint firstItem="dTM-2A-GVk" firstAttribute="centerY" secondItem="XIE-bm-aZH" secondAttribute="centerY" id="9TI-zI-LKQ"/>
                             <constraint firstItem="BLw-h7-o9W" firstAttribute="trailing" secondItem="1dr-A5-Pbg" secondAttribute="trailing" constant="16" id="9r1-I1-oEl"/>
-                            <constraint firstItem="aXq-fK-yUr" firstAttribute="top" secondItem="dTM-2A-GVk" secondAttribute="bottom" constant="10" id="9uZ-Hc-GjH"/>
                             <constraint firstItem="dTM-2A-GVk" firstAttribute="centerX" secondItem="XIE-bm-aZH" secondAttribute="centerX" id="B9E-yU-KGu"/>
                             <constraint firstItem="BLw-h7-o9W" firstAttribute="trailing" secondItem="oxG-85-Wjq" secondAttribute="trailing" constant="16" id="DF2-tk-u4Y"/>
+                            <constraint firstItem="aXq-fK-yUr" firstAttribute="top" secondItem="dTM-2A-GVk" secondAttribute="bottom" constant="10" id="G1C-wG-2UJ"/>
                             <constraint firstItem="oxG-85-Wjq" firstAttribute="leading" secondItem="BLw-h7-o9W" secondAttribute="leading" constant="16" id="NfJ-h1-vAA"/>
                             <constraint firstItem="1dr-A5-Pbg" firstAttribute="leading" secondItem="BLw-h7-o9W" secondAttribute="leading" constant="16" id="Yy0-DX-O4q"/>
                             <constraint firstItem="1dr-A5-Pbg" firstAttribute="top" secondItem="oxG-85-Wjq" secondAttribute="bottom" constant="20" id="b9T-J5-wfe"/>

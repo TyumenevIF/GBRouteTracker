@@ -1,7 +1,10 @@
 platform :ios, '10.0'
 
 target 'GBRouteTracker' do
+    use_frameworks!
+
     pod 'GoogleMaps'
+    pod 'RealmSwift'
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
 end

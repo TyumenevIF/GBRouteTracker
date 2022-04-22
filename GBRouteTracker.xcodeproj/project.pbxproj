@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,12 +26,12 @@
 		28883DBD262F4B6700079B24 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28883DBC262F4B6700079B24 /* LocationManager.swift */; };
 		2895C44A2634AEA700F5D90E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2895C4492634AEA700F5D90E /* GoogleService-Info.plist */; };
 		28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB0A532620467A004F0449 /* RoutePoint.swift */; };
-		28EB0A5A262066DD004F0449 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 28EB0A59262066DD004F0449 /* RealmSwift */; };
-		F7E41BB7D6846AD3F71FC2BF /* libPods-GBRouteTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */; };
+		B6563EEF363702838E2F1601 /* Pods_GBRouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0337DD702F56EA7927508933 /* Pods_GBRouteTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02560BDF322BA4A9A55ED610 /* Pods-GBRouteTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.release.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.release.xcconfig"; sourceTree = "<group>"; };
+		0337DD702F56EA7927508933 /* Pods_GBRouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBRouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		280458582618B7040049203B /* GBRouteTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBRouteTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2804585B2618B7040049203B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2804585D2618B7040049203B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +53,6 @@
 		28883DBC262F4B6700079B24 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2895C4492634AEA700F5D90E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28EB0A532620467A004F0449 /* RoutePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePoint.swift; sourceTree = "<group>"; };
-		DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GBRouteTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8E1E8AF2C5A112A69FA40F /* Pods-GBRouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBRouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,8 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28EB0A5A262066DD004F0449 /* RealmSwift in Frameworks */,
-				F7E41BB7D6846AD3F71FC2BF /* libPods-GBRouteTracker.a in Frameworks */,
+				B6563EEF363702838E2F1601 /* Pods_GBRouteTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +156,7 @@
 		7961696BA7839DF05F083DBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEFA760A4D5E12020CFC0F98 /* libPods-GBRouteTracker.a */,
+				0337DD702F56EA7927508933 /* Pods_GBRouteTracker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,15 +183,13 @@
 				280458562618B7040049203B /* Resources */,
 				683E8F14605A7C3E91F63FC9 /* [CP] Copy Pods Resources */,
 				280458742618CD9A0049203B /* ShellScript */,
+				A62165AD36DA79F3BE12FA90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = GBRouteTracker;
-			packageProductDependencies = (
-				28EB0A59262066DD004F0449 /* RealmSwift */,
-			);
 			productName = GBRouteTracker;
 			productReference = 280458582618B7040049203B /* GBRouteTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -221,9 +217,6 @@
 				Base,
 			);
 			mainGroup = 2804584F2618B7040049203B;
-			packageReferences = (
-				28EB0A58262066DD004F0449 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-			);
 			productRefGroup = 280458592618B7040049203B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -281,6 +274,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A62165AD36DA79F3BE12FA90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B32CCACC2014735F7475E54C /* [CP] Check Pods Manifest.lock */ = {
@@ -476,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GB.GBRouteTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = GB.GBRouteTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -524,25 +534,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		28EB0A58262066DD004F0449 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.7.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		28EB0A59262066DD004F0449 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 28EB0A58262066DD004F0449 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 280458502618B7040049203B /* Project object */;
 }
