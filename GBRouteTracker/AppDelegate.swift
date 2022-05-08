@@ -13,12 +13,13 @@ import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyD3ekp15-E3GzUSwDsL04fsQZJbBGO0u2Q")
         
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, _) in
             guard granted else {
                 print("Разрешение не получено")
                 return

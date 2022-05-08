@@ -15,7 +15,8 @@ protocol StoryboardIdentifiable {
 // Расширение UIViewController, которое даёт совместимость с протоколом StoryboardIdentifiable
 extension UIViewController: StoryboardIdentifiable { }
 
-// Расширение протокола StoryboardIdentifiable для UIViewController, создающее идентификатор в сториборде, равный названию класса контроллера
+// Расширение протокола StoryboardIdentifiable для UIViewController, создающее идентификатор в сториборде,
+// равный названию класса контроллера
 extension StoryboardIdentifiable where Self: UIViewController {    
     static var storyboardIdentifier: String {
         return String(describing: self)
