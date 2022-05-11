@@ -25,7 +25,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - GoogleMaps
     - Realm
     - RealmSwift
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
 
-PODFILE CHECKSUM: be6aa54b5948370f233c9ee761018cc9a5c43b93
+PODFILE CHECKSUM: eeef1d2d7290dc7fb68ed9108da1a8b48d42072c
 
 COCOAPODS: 1.11.3

@@ -14,7 +14,6 @@
 		280458682618B70B0049203B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280458662618B70B0049203B /* LaunchScreen.storyboard */; };
 		282E16B2262C4FDA004DEA3B /* CurtainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */; };
 		282FE13D262C89F000343F8C /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FE13C262C89F000343F8C /* ContainerViewController.swift */; };
-		282FE141262C8B0200343F8C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FE140262C8B0200343F8C /* UIViewController+Extension.swift */; };
 		287444DB26259D8100DAAD69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DA26259D8100DAAD69 /* LoginViewController.swift */; };
 		287444DE2625A28C00DAAD69 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444DD2625A28C00DAAD69 /* SignUpViewController.swift */; };
 		287444E12625A37600DAAD69 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287444E02625A37600DAAD69 /* MainViewController.swift */; };
@@ -41,7 +40,6 @@
 		280458692618B70B0049203B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainViewController.swift; sourceTree = "<group>"; };
 		282FE13C262C89F000343F8C /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		282FE140262C8B0200343F8C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		287444DA26259D8100DAAD69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287444DD2625A28C00DAAD69 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		287444E02625A37600DAAD69 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,13 +87,8 @@
 		2804585A2618B7040049203B /* GBRouteTracker */ = {
 			isa = PBXGroup;
 			children = (
+				43E8ECA3282BDB1E0001FFCC /* App */,
 				287444D126259BBF00DAAD69 /* Flows */,
-				2804585B2618B7040049203B /* AppDelegate.swift */,
-				2804585D2618B7040049203B /* SceneDelegate.swift */,
-				280458642618B70B0049203B /* Assets.xcassets */,
-				280458662618B70B0049203B /* LaunchScreen.storyboard */,
-				280458692618B70B0049203B /* Info.plist */,
-				2895C4492634AEA700F5D90E /* GoogleService-Info.plist */,
 			);
 			path = GBRouteTracker;
 			sourceTree = "<group>";
@@ -105,7 +98,6 @@
 			children = (
 				282E16B1262C4FDA004DEA3B /* CurtainViewController.swift */,
 				282FE13C262C89F000343F8C /* ContainerViewController.swift */,
-				282FE140262C8B0200343F8C /* UIViewController+Extension.swift */,
 			);
 			path = Curtain;
 			sourceTree = "<group>";
@@ -153,6 +145,19 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		43E8ECA3282BDB1E0001FFCC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2804585B2618B7040049203B /* AppDelegate.swift */,
+				2804585D2618B7040049203B /* SceneDelegate.swift */,
+				280458642618B70B0049203B /* Assets.xcassets */,
+				280458662618B70B0049203B /* LaunchScreen.storyboard */,
+				280458692618B70B0049203B /* Info.plist */,
+				2895C4492634AEA700F5D90E /* GoogleService-Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		7961696BA7839DF05F083DBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,9 +186,9 @@
 				280458542618B7040049203B /* Sources */,
 				280458552618B7040049203B /* Frameworks */,
 				280458562618B7040049203B /* Resources */,
-				683E8F14605A7C3E91F63FC9 /* [CP] Copy Pods Resources */,
 				280458742618CD9A0049203B /* ShellScript */,
-				A62165AD36DA79F3BE12FA90 /* [CP] Embed Pods Frameworks */,
+				AFDAC065037C79D0BB3925F5 /* [CP] Embed Pods Frameworks */,
+				6487341AEAD3E84AAAD0F7E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,7 +264,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		683E8F14605A7C3E91F63FC9 /* [CP] Copy Pods Resources */ = {
+		6487341AEAD3E84AAAD0F7E3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,7 +281,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBRouteTracker/Pods-GBRouteTracker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A62165AD36DA79F3BE12FA90 /* [CP] Embed Pods Frameworks */ = {
+		AFDAC065037C79D0BB3925F5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				287444E12625A37600DAAD69 /* MainViewController.swift in Sources */,
-				282FE141262C8B0200343F8C /* UIViewController+Extension.swift in Sources */,
 				280458602618B7040049203B /* MapViewController.swift in Sources */,
 				28EB0A542620467A004F0449 /* RoutePoint.swift in Sources */,
 				2804585C2618B7040049203B /* AppDelegate.swift in Sources */,
@@ -478,7 +482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8545KP6MGS;
 				EXCLUDED_ARCHS = "";
-				INFOPLIST_FILE = GBRouteTracker/Info.plist;
+				INFOPLIST_FILE = GBRouteTracker/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8545KP6MGS;
 				EXCLUDED_ARCHS = "";
-				INFOPLIST_FILE = GBRouteTracker/Info.plist;
+				INFOPLIST_FILE = GBRouteTracker/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
